@@ -75,8 +75,8 @@ clampProgress(numerator, denominator): number // 0..100 integer
 
 ## Acceptance Criteria
 
-- [ ] Tidak ada literal float di transaction/asset/fund code path.
-- [ ] Semua tampilan nominal lewat formatter.
-- [ ] Test: `Rp500.000 + Rp300.000 = Rp800.000`.
-- [ ] Test: division progress (3.5m / 5m) → 70%.
+- [x] Tidak ada literal float di transaction/asset/fund code path.
+- [x] Semua tampilan nominal lewat formatter.
+- [x] Test: `Rp500.000 + Rp300.000 = Rp800.000`.
+- [x] Test: division progress (3.5m / 5m) → 70%.
 - [ ] Format konsisten di seluruh UI (dashboard, list, detail, laporan).

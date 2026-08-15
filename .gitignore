@@ -28,3 +28,6 @@ logs
 
 # Local planning notes
 /plan/
+
+# Coverage reports
+/coverage/
