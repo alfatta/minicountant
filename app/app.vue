@@ -1,24 +1,16 @@
 <script setup lang="ts">
-const colorMode = useColorMode()
-
-const color = computed(() => colorMode.value === 'dark' ? '#1b1718' : 'white')
-
 useHead({
   meta: [
     { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: color }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   htmlAttrs: {
     lang: 'en'
   }
 })
 
-const title = 'Mini Countant'
-const description = 'A personal mini accounting app.'
+const title = 'MiniCountant'
+const description = 'A local-first, offline-first personal finance tracker for solo operators. IDR only.'
 
 useSeoMeta({
   title,

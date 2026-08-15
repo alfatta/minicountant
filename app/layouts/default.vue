@@ -1,162 +1,75 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui'
-
 const route = useRoute()
-const toast = useToast()
 
-const open = ref(false)
+const navItems = [{
+  label: 'Dashboard',
+  icon: 'i-lucide-layout-dashboard',
+  to: '/'
+}]
 
-const links = [[{
-  label: 'Home',
-  icon: 'i-lucide-house',
-  to: '/',
-  onSelect: () => {
-    open.value = false
-  }
-}, {
-  label: 'Inbox',
-  icon: 'i-lucide-inbox',
-  to: '/inbox',
-  badge: '4',
-  onSelect: () => {
-    open.value = false
-  }
-}, {
-  label: 'Customers',
-  icon: 'i-lucide-users',
-  to: '/customers',
-  onSelect: () => {
-    open.value = false
-  }
-}, {
-  label: 'Settings',
-  to: '/settings',
-  icon: 'i-lucide-settings',
-  defaultOpen: true,
-  type: 'trigger',
-  children: [{
-    label: 'General',
-    to: '/settings',
-    exact: true,
-    onSelect: () => {
-      open.value = false
-    }
-  }, {
-    label: 'Members',
-    to: '/settings/members',
-    onSelect: () => {
-      open.value = false
-    }
-  }, {
-    label: 'Notifications',
-    to: '/settings/notifications',
-    onSelect: () => {
-      open.value = false
-    }
-  }, {
-    label: 'Security',
-    to: '/settings/security',
-    onSelect: () => {
-      open.value = false
-    }
-  }]
-}], [{
-  label: 'Feedback',
-  icon: 'i-lucide-message-circle',
-  to: 'https://github.com/nuxt-ui-templates/dashboard',
-  target: '_blank'
-}, {
-  label: 'Help & Support',
-  icon: 'i-lucide-info',
-  to: 'https://github.com/nuxt-ui-templates/dashboard',
-  target: '_blank'
-}]] satisfies NavigationMenuItem[][]
-
-const groups = computed(() => [{
-  id: 'links',
-  label: 'Go to',
-  items: links.flat()
-}, {
-  id: 'code',
-  label: 'Code',
-  items: [{
-    id: 'source',
-    label: 'View page source',
-    icon: 'i-simple-icons-github',
-    to: `https://github.com/nuxt-ui-templates/dashboard/blob/main/app/pages${route.path === '/' ? '/index' : route.path}.vue`,
-    target: '_blank'
-  }]
-}])
-
-onMounted(async () => {
-  const cookie = useCookie('cookie-consent')
-  if (cookie.value === 'accepted') {
-    return
-  }
-
-  toast.add({
-    title: 'We use first-party cookies to enhance your experience on our website.',
-    duration: 0,
-    close: false,
-    actions: [{
-      label: 'Accept',
-      color: 'neutral',
-      variant: 'outline',
-      onClick: () => {
-        cookie.value = 'accepted'
-      }
-    }, {
-      label: 'Opt out',
-      color: 'neutral',
-      variant: 'ghost'
-    }]
-  })
-})
+const isActive = (to: string) => {
+  if (to === '/') return route.path === '/'
+  return route.path === to || route.path.startsWith(`${to}/`)
+}
 </script>
 
 <template>
-  <UDashboardGroup unit="rem">
-    <UDashboardSidebar
-      id="default"
-      v-model:open="open"
-      collapsible
-      resizable
-      class="bg-elevated/25"
-      :ui="{ footer: 'lg:border-t lg:border-default' }"
-    >
-      <template #header="{ collapsed }">
-        <TeamsMenu :collapsed="collapsed" />
-      </template>
+  <div class="min-h-screen flex flex-col bg-default">
+    <header class="border-b border-default">
+      <div class="max-w-6xl mx-auto px-4 h-14 flex items-center gap-6">
+        <NuxtLink
+          to="/"
+          class="flex items-center gap-2 font-semibold text-primary"
+        >
+          <UIcon
+            name="i-lucide-wallet"
+            class="size-5"
+          />
+          <span>MiniCountant</span>
+        </NuxtLink>
 
-      <template #default="{ collapsed }">
-        <UDashboardSearchButton :collapsed="collapsed" class="bg-transparent ring-default" />
+        <nav class="flex items-center gap-1">
+          <NuxtLink
+            v-for="item in navItems"
+            :key="item.to"
+            :to="item.to"
+            class="px-3 py-1.5 rounded-md text-sm flex items-center gap-2 transition-colors"
+            :class="isActive(item.to)
+              ? 'bg-primary/10 text-primary'
+              : 'text-muted hover:text-highlighted hover:bg-elevated'"
+          >
+            <UIcon
+              :name="item.icon"
+              class="size-4"
+            />
+            <span>{{ item.label }}</span>
+          </NuxtLink>
+        </nav>
 
-        <UNavigationMenu
-          :collapsed="collapsed"
-          :items="links[0]"
-          orientation="vertical"
-          tooltip
-          popover
-        />
+        <div class="ml-auto flex items-center gap-2">
+          <ClientOnly>
+            <UButton
+              :icon="$colorMode.value === 'dark' ? 'i-lucide-sun' : 'i-lucide-moon'"
+              color="neutral"
+              variant="ghost"
+              aria-label="Toggle color mode"
+              @click="$colorMode.preference = $colorMode.value === 'dark' ? 'light' : 'dark'"
+            />
+          </ClientOnly>
+        </div>
+      </div>
+    </header>
 
-        <UNavigationMenu
-          :collapsed="collapsed"
-          :items="links[1]"
-          orientation="vertical"
-          tooltip
-          class="mt-auto"
-        />
-      </template>
+    <main class="flex-1">
+      <div class="max-w-6xl mx-auto px-4 py-6">
+        <slot />
+      </div>
+    </main>
 
-      <template #footer="{ collapsed }">
-        <UserMenu :collapsed="collapsed" />
-      </template>
-    </UDashboardSidebar>
-
-    <UDashboardSearch :groups="groups" />
-
-    <slot />
-
-    <NotificationsSlideover />
-  </UDashboardGroup>
+    <footer class="border-t border-default">
+      <div class="max-w-6xl mx-auto px-4 h-12 flex items-center text-xs text-dimmed">
+        MiniCountant · Local-first · IDR
+      </div>
+    </footer>
+  </div>
 </template>

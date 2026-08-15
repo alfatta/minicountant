@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -15,10 +14,11 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Mini Countant',
+      title: 'MiniCountant',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#ffffff' }
+        { name: 'theme-color', content: '#10b981' },
+        { name: 'description', content: 'A local-first, offline-first personal finance tracker. IDR only. Single user, single company.' }
       ]
     }
   },
@@ -40,10 +40,10 @@ export default defineNuxtConfig({
     registerType: 'autoUpdate',
     injectRegister: 'auto',
     manifest: {
-      name: 'Mini Countant',
-      short_name: 'Mini Countant',
-      description: 'A personal mini accounting app',
-      theme_color: '#ffffff',
+      name: 'MiniCountant',
+      short_name: 'MiniCountant',
+      description: 'Local-first personal finance for solo operators',
+      theme_color: '#10b981',
       background_color: '#ffffff',
       display: 'standalone',
       start_url: '/',

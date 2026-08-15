@@ -1,0 +1,48 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    name: lint / typecheck / test / build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.20.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Nuxt prepare (postinstall may be skipped in CI)
+        run: pnpm exec nuxt prepare
+
+      - name: Lint (ESLint)
+        run: pnpm lint
+
+      - name: Lint (no-money bash guard)
+        run: pnpm lint:no-money
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test (Vitest)
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+        env:
+          NITRO_PRESET: node-server
