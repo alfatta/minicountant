@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  maplibre-gl: true
+  unrs-resolver: true
+  vue-demi: true
+minimumReleaseAgeExclude:
+  - dexie@4.4.5
