@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useLock } from '~/composables/useLock'
+
 const route = useRoute()
+const { touch, startInactivityWatcher, stopInactivityWatcher } = useLock()
 
 const navItems = [{
   label: 'Dashboard',
@@ -11,6 +14,29 @@ const isActive = (to: string) => {
   if (to === '/') return route.path === '/'
   return route.path === to || route.path.startsWith(`${to}/`)
 }
+
+function onActivity() {
+  if (typeof document !== 'undefined' && document.hidden) return
+  touch()
+}
+
+onMounted(() => {
+  startInactivityWatcher()
+  globalThis.addEventListener('pointerdown', onActivity)
+  globalThis.addEventListener('keydown', onActivity)
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', onActivity)
+  }
+})
+
+onBeforeUnmount(() => {
+  stopInactivityWatcher()
+  globalThis.removeEventListener('pointerdown', onActivity)
+  globalThis.removeEventListener('keydown', onActivity)
+  if (typeof document !== 'undefined') {
+    document.removeEventListener('visibilitychange', onActivity)
+  }
+})
 </script>
 
 <template>

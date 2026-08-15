@@ -98,10 +98,10 @@ Untuk MVP: derived key hanya dipakai untuk **verifikasi** (hash compare), tidak 
 
 ## Acceptance Criteria
 
-- [ ] Password tidak pernah tampil di UI setelah disimpan.
-- [ ] Unlock dengan password salah → error friendly.
-- [ ] Unlock dengan password benar → masuk dashboard.
-- [ ] Manual lock → kembali ke lock screen.
-- [ ] Auto-lock setelah inactivity.
-- [ ] Change password berfungsi tanpa data loss.
-- [ ] Struktur kode memungkinkan enkripsi data di versi berikutnya.
+- [x] Password tidak pernah tampil di UI setelah disimpan.
+- [x] Unlock dengan password salah → error friendly.
+- [x] Unlock dengan password benar → masuk dashboard.
+- [x] Manual lock → kembali ke lock screen.
+- [x] Auto-lock setelah inactivity.
+- [x] Change password berfungsi tanpa data loss.
+- [x] Struktur kode memungkinkan enkripsi data di versi berikutnya.
