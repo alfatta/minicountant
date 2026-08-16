@@ -54,7 +54,7 @@ company = {
 
 ## Acceptance Criteria
 
-- [ ] Hanya 1 company row bisa ada.
-- [ ] `currency` tidak bisa diubah sembarangan (perlu konfirmasi data migration).
-- [ ] `updatedAt` auto-update setiap perubahan.
-- [ ] Semua entity finansial reference `companyId` valid.
+- [x] Hanya 1 company row bisa ada.
+- [x] `currency` tidak bisa diubah sembarangan (perlu konfirmasi data migration).
+- [x] `updatedAt` auto-update setiap perubahan.
+- [x] Semua entity finansial reference `companyId` valid.

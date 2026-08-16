@@ -11,6 +11,7 @@ export default defineConfig({
       'tests/unit/**/*.test.ts',
       'tests/lint/**/*.test.ts',
       'tests/db/**/*.test.ts',
+      'tests/domain/**/*.test.ts',
       'tests/security/**/*.test.ts',
       'tests/funds/**/*.test.ts',
       'tests/capital/**/*.test.ts',

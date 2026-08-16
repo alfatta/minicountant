@@ -99,10 +99,10 @@ assets       → empty
 
 ## Acceptance Criteria
 
-- [ ] First launch detect `company` tidak ada → tampilkan onboarding.
-- [ ] Step 1 validasi name & shortName.
-- [ ] Step 2 validasi password match, simpan hash+salt.
-- [ ] Step 3 default 4 fund editable, bisa di-skip.
-- [ ] Onboarding selesai → state jadi `READY` → redirect `/`.
-- [ ] Onboarding tidak bisa di-skip (wajib dilalui).
-- [ ] Tidak ada fake financial transaction dibuat.
+- [x] First launch detect `company` tidak ada → tampilkan onboarding.
+- [x] Step 1 validasi name & shortName.
+- [x] Step 2 validasi password match, simpan hash+salt.
+- [x] Step 3 default 4 fund editable, bisa di-skip.
+- [x] Onboarding selesai → state jadi `READY` → redirect `/`.
+- [x] Onboarding tidak bisa di-skip (wajib dilalui).
+- [x] Tidak ada fake financial transaction dibuat.
