@@ -16,6 +16,11 @@ const navItems = [
     to: '/funds'
   },
   {
+    label: 'Assets',
+    icon: 'i-lucide-server',
+    to: '/assets'
+  },
+  {
     label: 'Transactions',
     icon: 'i-lucide-arrow-left-right',
     to: '/transactions'
