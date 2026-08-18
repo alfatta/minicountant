@@ -81,20 +81,20 @@ function onFundsUpdate(value: { funds: typeof fundsDraft.value }) {
     />
 
     <UCard>
-      <CompanyStep
+      <OnboardingCompanyStep
         v-if="step === 1"
         :state="companyDraft"
         @update="onCompanyUpdate"
         @next="next"
       />
-      <PasswordStep
+      <OnboardingPasswordStep
         v-else-if="step === 2"
-        :state="passwordDraft"
+        :state="{ password: passwordDraft }"
         @update="onPasswordUpdate"
         @next="next"
         @back="back"
       />
-      <FundsStep
+      <OnboardingFundsStep
         v-else
         :state="{ funds: fundsDraft }"
         @update="onFundsUpdate"
