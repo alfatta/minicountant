@@ -14,6 +14,11 @@ const navItems = [
     label: 'Funds',
     icon: 'i-lucide-piggy-bank',
     to: '/funds'
+  },
+  {
+    label: 'Transactions',
+    icon: 'i-lucide-arrow-left-right',
+    to: '/transactions'
   }
 ]
 

@@ -128,8 +128,8 @@ _(lihat 08-assets untuk detail)_
 
 ## Acceptance Criteria
 
-- [ ] Tidak ada duplikasi balance di storage (semua derived).
-- [ ] Create/edit/delete satu tx → semua metric update.
-- [ ] Filter & sort berfungsi di ribuan entries.
-- [ ] Validation gagal → tampilkan error friendly, tidak crash.
-- [ ] Domain validation tidak bypass-able dari UI.
+- [x] Tidak ada duplikasi balance di storage (semua derived).
+- [x] Create/edit/delete satu tx → semua metric update.
+- [x] Filter & sort berfungsi di ribuan entries.
+- [x] Validation gagal → tampilkan error friendly, tidak crash.
+- [x] Domain validation tidak bypass-able dari UI.

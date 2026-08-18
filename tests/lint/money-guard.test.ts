@@ -6,6 +6,27 @@ import { join } from 'node:path'
 
 const repoRoot = process.cwd()
 
+function scanFixture(fixture: string): { status: number | null, output: string } {
+  const patterns = ['parseFloat\\s*\\(', '\\b[0-9][0-9_]*\\.[0-9][0-9_]*\\b']
+  if (fileExists('rg')) {
+    const res = spawnSync('rg', ['--no-heading', '-n', '-e', patterns[0]!, '-e', patterns[1]!, fixture], {
+      encoding: 'utf8'
+    })
+    return { status: res.status ?? null, output: `${res.stdout ?? ''}${res.stderr ?? ''}` }
+  }
+  const res = spawnSync('grep', ['-nE', patterns[0]!, fixture], { encoding: 'utf8' })
+  const res2 = spawnSync('grep', ['-nE', patterns[1]!, fixture], { encoding: 'utf8' })
+  return {
+    status: res.status !== null ? res.status : res2.status,
+    output: `${res.stdout ?? ''}${res2.stdout ?? ''}${res.stderr ?? ''}${res2.stderr ?? ''}`
+  }
+}
+
+function fileExists(cmd: string): boolean {
+  const res = spawnSync('command', ['-v', cmd], { encoding: 'utf8' })
+  return res.status === 0
+}
+
 function runLintNoMoney(): { status: number, stdout: string, stderr: string } {
   const res = spawnSync('pnpm', ['lint:no-money'], {
     cwd: repoRoot,
@@ -29,17 +50,10 @@ describe('money-guard script', () => {
     const fixture = join(dir, 'fixture.ts')
     try {
       writeFileSync(fixture, 'const x = parseFloat("1.5")\nconst y = (1.5 + 2.5)\n')
-      const res = spawnSync('rg', [
-        '-n',
-        '--color=never',
-        '-g', '*.ts',
-        '-e', 'parseFloat\\s*\\(',
-        '-e', '\\b[0-9][0-9_]*\\.[0-9][0-9_]*\\b',
-        fixture
-      ], { encoding: 'utf8' })
+      const res = scanFixture(fixture)
       expect(res.status).toBe(0)
-      expect(res.stdout).toContain('parseFloat')
-      expect(res.stdout).toContain('1.5')
+      expect(res.output).toContain('parseFloat')
+      expect(res.output).toContain('1.5')
     } finally { rmSync(dir, { recursive: true, force: true }) }
   })
 })
