@@ -58,7 +58,11 @@ export function startOfNextMonth(): number {
   return startOfMonth(addMonths(Date.now(), 1))
 }
 
-export function nextYear(epochMs: number): number {
+export function nextYear(): number {
+  return addMonths(Date.now(), 12)
+}
+
+export function nextYearAt(epochMs: number): number {
   return addMonths(epochMs, 12)
 }
 

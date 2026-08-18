@@ -4,11 +4,18 @@ import { useLock } from '~/composables/useLock'
 const route = useRoute()
 const { touch, startInactivityWatcher, stopInactivityWatcher } = useLock()
 
-const navItems = [{
-  label: 'Dashboard',
-  icon: 'i-lucide-layout-dashboard',
-  to: '/'
-}]
+const navItems = [
+  {
+    label: 'Dashboard',
+    icon: 'i-lucide-layout-dashboard',
+    to: '/'
+  },
+  {
+    label: 'Funds',
+    icon: 'i-lucide-piggy-bank',
+    to: '/funds'
+  }
+]
 
 const isActive = (to: string) => {
   if (to === '/') return route.path === '/'

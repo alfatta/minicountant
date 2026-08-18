@@ -166,8 +166,8 @@ Pembelian ThinkCentre #2:
 
 ## Acceptance Criteria
 
-- [ ] Fund balance **tidak pernah** disimpan manual.
-- [ ] Edit/hapus alokasi atau expense → balance update.
-- [ ] Recurring renewal → transaction + nextRenewalDate update.
-- [ ] Rollover: beli aset 4m dari target 5m → sisa 1m tetap.
-- [ ] Hapus fund dengan reference → ditolak / minta konfirmasi.
+- [x] Fund balance **tidak pernah** disimpan manual.
+- [x] Edit/hapus alokasi atau expense → balance update.
+- [x] Recurring renewal → transaction + nextRenewalDate update.
+- [x] Rollover: beli aset 4m dari target 5m → sisa 1m tetap.
+- [x] Hapus fund dengan reference → ditolak / minta konfirmasi.

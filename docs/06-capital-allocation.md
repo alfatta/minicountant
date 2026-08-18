@@ -95,8 +95,8 @@ _(lihat 07-funds untuk detail lengkap)_
 
 ## Acceptance Criteria
 
-- [ ] Modal injection 1 transaction + N allocations dalam 1 save.
-- [ ] Validasi total alokasi ≤ amount.
-- [ ] Fund balance update otomatis.
-- [ ] Edit allocation → recompute benar.
-- [ ] Hapus transaction → alokasi ikut bersih (cascade).
+- [x] Modal injection 1 transaction + N allocations dalam 1 save.
+- [x] Validasi total alokasi ≤ amount.
+- [x] Fund balance update otomatis.
+- [x] Edit allocation → recompute benar.
+- [x] Hapus transaction → alokasi ikut bersih (cascade).
