@@ -110,8 +110,8 @@ ThinkCentre pertama bisa disimpan di sini.
 
 ## Acceptance Criteria
 
-- [ ] Dashboard load < 1 detik (dengan data ribuan).
-- [ ] Mobile-first: scroll vertikal, card-based.
-- [ ] Desktop: grid multi-column.
-- [ ] Semua metric update real-time setelah transaksi baru.
-- [ ] Empty state untuk fund/asset/transaction masing-masing.
+- [x] Dashboard load < 1 detik (dengan data ribuan).
+- [x] Mobile-first: scroll vertikal, card-based.
+- [x] Desktop: grid multi-column.
+- [x] Semua metric update real-time setelah transaksi baru.
+- [x] Empty state untuk fund/asset/transaction masing-masing.

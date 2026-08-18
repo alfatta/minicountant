@@ -75,7 +75,7 @@ _(Pick salah satu; recommended: tetap boleh edit, closing sebagai snapshot. Reop
 
 ## Acceptance Criteria
 
-- [ ] Closing adalah snapshot derived, bukan sumber kebenaran.
-- [ ] Reopen berfungsi dengan audit trail.
-- [ ] Tidak ada double-closing untuk bulan yang sama.
-- [ ] List semua closing diurut by year-month desc.
+- [x] Closing adalah snapshot derived, bukan sumber kebenaran.
+- [x] Reopen berfungsi dengan audit trail.
+- [x] Tidak ada double-closing untuk bulan yang sama.
+- [x] List semua closing diurut by year-month desc.

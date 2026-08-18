@@ -55,8 +55,8 @@ Pusat konfigurasi aplikasi: company, security, data, appearance.
 
 ## Acceptance Criteria
 
-- [ ] Semua section accessible dari `/settings`.
-- [ ] Change password tidak log out user.
-- [ ] Reset company butuh konfirmasi ganda.
-- [ ] Theme switch real-time.
-- [ ] Auto-lock setting langsung berlaku.
+- [x] Semua section accessible dari `/settings`.
+- [x] Change password tidak log out user.
+- [x] Reset company butuh konfirmasi ganda.
+- [x] Theme switch real-time.
+- [x] Auto-lock setting langsung berlaku.

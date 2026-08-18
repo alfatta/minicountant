@@ -74,7 +74,7 @@ VPS        300.000     300.000     0            100%        25.000
 
 ## Acceptance Criteria
 
-- [ ] Semua nilai derived (tidak disimpan manual).
-- [ ] Filter bulan/tahun berfungsi.
-- [ ] Empty state per section.
-- [ ] Export CSV per section.
+- [x] Semua nilai derived (tidak disimpan manual).
+- [x] Filter bulan/tahun berfungsi.
+- [x] Empty state per section.
+- [x] Export CSV per section.

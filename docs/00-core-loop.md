@@ -104,10 +104,10 @@ Next Asset
 
 ## Acceptance Criteria Loop
 
-- [ ] User bisa injeksi modal + langsung alokasi ke fund dalam 1 flow.
-- [ ] User bisa catat bunga dalam ≤ 3 tap.
-- [ ] User bisa catat expense recurring (VPS/Domain) yang auto-advance renewal date.
-- [ ] User bisa beli aset dan otomatis terbentuk asset + transaksi.
-- [ ] Dashboard update real-time tanpa refresh.
-- [ ] Monthly closing menghasilkan snapshot akurat.
-- [ ] Net worth konsisten setelah pembelian aset (cash turun, asset naik, total sama di titik beli).
+- [x] User bisa injeksi modal + langsung alokasi ke fund dalam 1 flow.
+- [x] User bisa catat bunga dalam ≤ 3 tap.
+- [x] User bisa catat expense recurring (VPS/Domain) yang auto-advance renewal date.
+- [x] User bisa beli aset dan otomatis terbentuk asset + transaksi.
+- [x] Dashboard update real-time tanpa refresh.
+- [x] Monthly closing menghasilkan snapshot akurat.
+- [x] Net worth konsisten setelah pembelian aset (cash turun, asset naik, total sama di titik beli).

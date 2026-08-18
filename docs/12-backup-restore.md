@@ -116,9 +116,9 @@ Format standar: header row + data rows, UTF-8, comma-separated.
 
 ## Acceptance Criteria
 
-- [ ] Download menghasilkan file valid `.hcb`.
-- [ ] Restore dari file valid → data kembali sama.
-- [ ] Restore dari file invalid → error friendly.
-- [ ] Auto-backup current sebelum restore.
-- [ ] CSV export per tabel berfungsi.
-- [ ] Version migration path siap (future-proof).
+- [x] Download menghasilkan file valid `.hcb`.
+- [x] Restore dari file valid → data kembali sama.
+- [x] Restore dari file invalid → error friendly.
+- [x] Auto-backup current sebelum restore.
+- [x] CSV export per tabel berfungsi.
+- [x] Version migration path siap (future-proof).

@@ -114,7 +114,7 @@ Net Worth = Cash + Σ currentValue (asset.status = ACTIVE)
 
 ## Acceptance Criteria
 
-- [ ] Beli aset → 1 asset record + 1 transaction.
-- [ ] Net worth update real-time saat current value diubah.
-- [ ] Jual aset → status SOLD + transaction ASSET_SALE.
-- [ ] Hapus aset dengan transaction reference → butuh konfirmasi.
+- [x] Beli aset → 1 asset record + 1 transaction.
+- [x] Net worth update real-time saat current value diubah.
+- [x] Jual aset → status SOLD + transaction ASSET_SALE.
+- [x] Hapus aset dengan transaction reference → butuh konfirmasi.

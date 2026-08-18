@@ -79,4 +79,4 @@ clampProgress(numerator, denominator): number // 0..100 integer
 - [x] Semua tampilan nominal lewat formatter.
 - [x] Test: `Rp500.000 + Rp300.000 = Rp800.000`.
 - [x] Test: division progress (3.5m / 5m) → 70%.
-- [ ] Format konsisten di seluruh UI (dashboard, list, detail, laporan).
+- [x] Format konsisten di seluruh UI (dashboard, list, detail, laporan).

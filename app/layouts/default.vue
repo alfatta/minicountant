@@ -24,6 +24,21 @@ const navItems = [
     label: 'Transactions',
     icon: 'i-lucide-arrow-left-right',
     to: '/transactions'
+  },
+  {
+    label: 'Reports',
+    icon: 'i-lucide-chart-line',
+    to: '/reports'
+  },
+  {
+    label: 'Closing',
+    icon: 'i-lucide-calendar-check',
+    to: '/monthly-closing'
+  },
+  {
+    label: 'Settings',
+    icon: 'i-lucide-settings',
+    to: '/settings'
   }
 ]
 

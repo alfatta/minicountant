@@ -35,4 +35,21 @@ Dokumen ini adalah breakdown **logic & business rules** per fitur aplikasi MiniC
 
 ## Status Implementasi
 
-_(Diisi saat mulai coding — setiap file `.md` akan punya checklist implementation.)_
+Phases 0–13 complete. MVP releasable at `0.1.0`.
+
+| Phase | Doc | Status |
+| ----- | --- | ------ |
+| 0  | Foundation & Conventions | ✅ done |
+| 1  | 01-money | ✅ done |
+| 2  | (schema/persistence) | ✅ done |
+| 3  | 03-security | ✅ done |
+| 4  | 02-onboarding, 04-company | ✅ done |
+| 5  | 06-capital-allocation, 07-funds | ✅ done |
+| 6  | 05-transactions | ✅ done |
+| 7  | 08-assets | ✅ done |
+| 8  | 09-dashboard | ✅ done |
+| 9  | 11-monthly-closing | ✅ done |
+| 10 | 10-reports | ✅ done |
+| 11 | 12-backup-restore | ✅ done |
+| 12 | 13-settings | ✅ done |
+| 13 | Cross-cutting Polish | ✅ done |
